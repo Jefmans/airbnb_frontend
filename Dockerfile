@@ -1,6 +1,6 @@
 FROM nginx:alpine
 
-COPY .web/ /usr/share/nginx/html
+COPY frontend_build/ /usr/share/nginx/html
 
 EXPOSE 80
 
