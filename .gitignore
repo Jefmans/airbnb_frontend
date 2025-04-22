@@ -1,0 +1,13 @@
+__pycache__/
+*.db
+assets/external/
+.states
+*.py[cod]
+/.pytest_cache
+/venv
+/frontend
+/__pycache__
+/assets
+/backend.zip
+/frontend.zip
+/rxconfig.py
