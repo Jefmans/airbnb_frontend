@@ -7,8 +7,8 @@ import { ColorModeContext, EventLoopContext } from "$/utils/context"
 import { WifiOff as LucideWifiOff } from "lucide-react"
 import { keyframes } from "@emotion/react"
 import env from "$/env.json"
-import { Box as RadixThemesBox, Text as RadixThemesText } from "@radix-ui/themes"
 import { toast, Toaster } from "sonner"
+import { Box as RadixThemesBox, Text as RadixThemesText } from "@radix-ui/themes"
 
 
 
@@ -69,6 +69,20 @@ export const DefaultOverlayComponents = memo(({}) => {
 
 })
 
+export const MemoizedToastProvider = memo(({}) => {
+    
+  const { resolvedColorMode } = useContext(ColorModeContext)
+
+  refs['__toast'] = toast
+
+
+
+    return(
+        <Toaster closeButton={false} expand={true} position={"bottom-right"} richColors={true} theme={resolvedColorMode}/>
+      )
+
+})
+
 export const MemoizedBadge = memo(({}) => {
     
   const { resolvedColorMode } = useContext(ColorModeContext)
@@ -93,20 +107,6 @@ export const MemoizedBadge = memo(({}) => {
 </RadixThemesText>
 </RadixThemesBox>
 </a>
-      )
-
-})
-
-export const MemoizedToastProvider = memo(({}) => {
-    
-  const { resolvedColorMode } = useContext(ColorModeContext)
-
-  refs['__toast'] = toast
-
-
-
-    return(
-        <Toaster closeButton={false} expand={true} position={"bottom-right"} richColors={true} theme={resolvedColorMode}/>
       )
 
 })
