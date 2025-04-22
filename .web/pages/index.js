@@ -52,6 +52,13 @@ export default function Component() {
 {"Browse unique places to stay, hosted by real people."}
 </RadixThemesText>
 </RadixThemesContainer>
+<RadixThemesLink asChild={true} css={({ ["&:hover"] : ({ ["color"] : "var(--accent-8)" }) })}>
+
+<NextLink href={"/search"} passHref={true}>
+
+{"Search"}
+</NextLink>
+</RadixThemesLink>
 </RadixThemesFlex>
 <NextHead>
 
